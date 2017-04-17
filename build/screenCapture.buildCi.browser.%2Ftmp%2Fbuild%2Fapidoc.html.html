@@ -1,0 +1,5115 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/mWater/minimongo">minimongo (v4.5.0)</a>
+</h1>
+<h4>Client-side mongo database with server sync over http</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo">module minimongo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>HybridDb
+            <span class="apidocSignatureSpan">(localDb, remoteDb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.upload">
+            function <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype.upload
+            <span class="apidocSignatureSpan">(success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb
+            <span class="apidocSignatureSpan">(options, success)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb
+            <span class="apidocSignatureSpan">(options, success)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb
+            <span class="apidocSignatureSpan">(url, client, httpClient)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicaDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>ReplicaDb
+            <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb
+            <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb.prototype.addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb.prototype.removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.jQueryHttpClient">
+            function <span class="apidocSignatureSpan">minimongo.</span>jQueryHttpClient
+            <span class="apidocSignatureSpan">(method, url, params, data, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.autoselectLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.autoselectLocalDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.cloneLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.cloneLocalDb
+            <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.compileDocumentSelector">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.compileDocumentSelector
+            <span class="apidocSignatureSpan">(docSelector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.createUid">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.createUid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.filterFields">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.filterFields
+            <span class="apidocSignatureSpan">(items, fields)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.migrateLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.migrateLocalDb
+            <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.processFind">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.processFind
+            <span class="apidocSignatureSpan">(items, selector, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.regularizeUpsert">
+            function <span class="apidocSignatureSpan">minimongo.</span>utils.regularizeUpsert
+            <span class="apidocSignatureSpan">(docs, bases, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>EJSON</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>IndexedDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>MemoryDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>RemoteDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>ReplicaDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>selector</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">minimongo.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.EJSON">module minimongo.EJSON</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON._adjustTypesFromJSONValue">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>_adjustTypesFromJSONValue
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON._adjustTypesToJSONValue">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>_adjustTypesToJSONValue
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON._isCustomType">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>_isCustomType
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.addType">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>addType
+            <span class="apidocSignatureSpan">(name, factory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.clone">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>clone
+            <span class="apidocSignatureSpan">(v)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.equals">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>equals
+            <span class="apidocSignatureSpan">(a, b, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.fromJSONValue">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>fromJSONValue
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.isBinary">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>isBinary
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.parse">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>parse
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.stringify">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>stringify
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.EJSON.toJSONValue">
+            function <span class="apidocSignatureSpan">minimongo.EJSON.</span>toJSONValue
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.HybridDb">module minimongo.HybridDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.HybridDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>HybridDb
+            <span class="apidocSignatureSpan">(localDb, remoteDb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.HybridDb.prototype">module minimongo.HybridDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.upload">
+            function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>upload
+            <span class="apidocSignatureSpan">(success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.HybridDb.prototype.addCollection">module minimongo.HybridDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, options, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.HybridDb.prototype.removeCollection">module minimongo.HybridDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.HybridDb.prototype.upload">module minimongo.HybridDb.prototype.upload</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.HybridDb.prototype.upload.upload">
+            function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>upload
+            <span class="apidocSignatureSpan">(success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.IndexedDb">module minimongo.IndexedDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.IndexedDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.IndexedDb.prototype">module minimongo.IndexedDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.IndexedDb.prototype.addCollection">module minimongo.IndexedDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.IndexedDb.prototype.removeCollection">module minimongo.IndexedDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.IndexedDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.LocalStorageDb">module minimongo.LocalStorageDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.LocalStorageDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb
+            <span class="apidocSignatureSpan">(options, success)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.LocalStorageDb.prototype">module minimongo.LocalStorageDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.LocalStorageDb.prototype.addCollection">module minimongo.LocalStorageDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.LocalStorageDb.prototype.removeCollection">module minimongo.LocalStorageDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.MemoryDb">module minimongo.MemoryDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.MemoryDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb
+            <span class="apidocSignatureSpan">(options, success)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.MemoryDb.prototype">module minimongo.MemoryDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.MemoryDb.prototype.addCollection">module minimongo.MemoryDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.MemoryDb.prototype.removeCollection">module minimongo.MemoryDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.MemoryDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.RemoteDb">module minimongo.RemoteDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.RemoteDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb
+            <span class="apidocSignatureSpan">(url, client, httpClient)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.RemoteDb.prototype">module minimongo.RemoteDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.RemoteDb.prototype.addCollection">module minimongo.RemoteDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, options, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.RemoteDb.prototype.removeCollection">module minimongo.RemoteDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.RemoteDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.ReplicaDb">module minimongo.ReplicaDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicaDb.ReplicaDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>ReplicaDb
+            <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.ReplicaDb.prototype">module minimongo.ReplicaDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicaDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.ReplicaDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicaDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.ReplicaDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.ReplicatingDb">module minimongo.ReplicatingDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.ReplicatingDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb
+            <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.ReplicatingDb.prototype">module minimongo.ReplicatingDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.ReplicatingDb.prototype.addCollection">module minimongo.ReplicatingDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.ReplicatingDb.prototype.removeCollection">module minimongo.ReplicatingDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.WebSQLDb">module minimongo.WebSQLDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.WebSQLDb">
+            function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.WebSQLDb.prototype">module minimongo.WebSQLDb.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.prototype.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.prototype.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.WebSQLDb.prototype.addCollection">module minimongo.WebSQLDb.prototype.addCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.prototype.addCollection.addCollection">
+            function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>addCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.WebSQLDb.prototype.removeCollection">module minimongo.WebSQLDb.prototype.removeCollection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.WebSQLDb.prototype.removeCollection.removeCollection">
+            function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>removeCollection
+            <span class="apidocSignatureSpan">(name, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.jQueryHttpClient">module minimongo.jQueryHttpClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.jQueryHttpClient.jQueryHttpClient">
+            function <span class="apidocSignatureSpan">minimongo.</span>jQueryHttpClient
+            <span class="apidocSignatureSpan">(method, url, params, data, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.selector">module minimongo.selector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.selector.compileDocumentSelector">
+            function <span class="apidocSignatureSpan">minimongo.selector.</span>compileDocumentSelector
+            <span class="apidocSignatureSpan">(docSelector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.selector.compileSort">
+            function <span class="apidocSignatureSpan">minimongo.selector.</span>compileSort
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils">module minimongo.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.autoselectLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>autoselectLocalDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.cloneLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>cloneLocalDb
+            <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.compileDocumentSelector">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>compileDocumentSelector
+            <span class="apidocSignatureSpan">(docSelector)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.createUid">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>createUid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.filterFields">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>filterFields
+            <span class="apidocSignatureSpan">(items, fields)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.migrateLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>migrateLocalDb
+            <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.processFind">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>processFind
+            <span class="apidocSignatureSpan">(items, selector, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.regularizeUpsert">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>regularizeUpsert
+            <span class="apidocSignatureSpan">(docs, bases, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.autoselectLocalDb">module minimongo.utils.autoselectLocalDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.autoselectLocalDb.autoselectLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>autoselectLocalDb
+            <span class="apidocSignatureSpan">(options, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.cloneLocalDb">module minimongo.utils.cloneLocalDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.cloneLocalDb.cloneLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>cloneLocalDb
+            <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.compileDocumentSelector">module minimongo.utils.compileDocumentSelector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.compileDocumentSelector.compileDocumentSelector">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>compileDocumentSelector
+            <span class="apidocSignatureSpan">(docSelector)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.createUid">module minimongo.utils.createUid</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.createUid.createUid">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>createUid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.filterFields">module minimongo.utils.filterFields</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.filterFields.filterFields">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>filterFields
+            <span class="apidocSignatureSpan">(items, fields)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.migrateLocalDb">module minimongo.utils.migrateLocalDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.migrateLocalDb.migrateLocalDb">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>migrateLocalDb
+            <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.processFind">module minimongo.utils.processFind</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.processFind.processFind">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>processFind
+            <span class="apidocSignatureSpan">(items, selector, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.minimongo.utils.regularizeUpsert">module minimongo.utils.regularizeUpsert</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.minimongo.utils.regularizeUpsert.regularizeUpsert">
+            function <span class="apidocSignatureSpan">minimongo.utils.</span>regularizeUpsert
+            <span class="apidocSignatureSpan">(docs, bases, success, error)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo" id="apidoc.module.minimongo">module minimongo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb" id="apidoc.element.minimongo.HybridDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>HybridDb
+        <span class="apidocSignatureSpan">(localDb, remoteDb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HybridDb(localDb, remoteDb) {
+  this.localDb = localDb;
+  this.remoteDb = remoteDb;
+  this.collections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.addCollection" id="apidoc.element.minimongo.HybridDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HybridDb.prototype.addCollection = function (name, options, success, error) {
+  var collection, _ref;
+  if (_.isFunction(options)) {
+    _ref = [{}, options, success], options = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  collection = new HybridCollection(name, this.localDb[name], this.remoteDb[name], options);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.removeCollection" id="apidoc.element.minimongo.HybridDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HybridDb.prototype.removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.upload" id="apidoc.element.minimongo.HybridDb.prototype.upload">
+        function <span class="apidocSignatureSpan">minimongo.</span>HybridDb.prototype.upload
+        <span class="apidocSignatureSpan">(success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HybridDb.prototype.upload = function (success, error) {
+  var cols, uploadCols;
+  cols = _.values(this.collections);
+  uploadCols = function(cols, success, error) {
+    var col;
+    col = _.first(cols);
+    if (col) {
+      return col.upload(function() {
+        return uploadCols(_.rest(cols), success, error);
+      }, function(err) {
+        return error(err);
+      });
+    } else {
+      return success();
+    }
+  };
+  return uploadCols(cols, success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb" id="apidoc.element.minimongo.IndexedDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IndexedDb(options, success, error) {
+  var ex;
+  this.collections = {};
+  try {
+    this.store = new IDBStore({
+      dbVersion: 1,
+      storeName: 'minimongo_' + options.namespace,
+      keyPath: ['col', 'doc._id'],
+      autoIncrement: false,
+      onStoreReady: (function(_this) {
+        return function() {
+          if (success) {
+            return success(_this);
+          }
+        };
+      })(this),
+      onError: error,
+      indexes: [
+        {
+          name: 'col',
+          keyPath: 'col',
+          unique: false,
+          multiEntry: false
+        }, {
+          name: 'col-state',
+          keyPath: ['col', 'state'],
+          unique: false,
+          multiEntry: false
+        }
+      ]
+    });
+  } catch (_error) {
+    ex = _error;
+    if (error) {
+      error(ex);
+    }
+    return;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.prototype.addCollection" id="apidoc.element.minimongo.IndexedDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IndexedDb.prototype.addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.store);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.prototype.removeCollection" id="apidoc.element.minimongo.IndexedDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IndexedDb.prototype.removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  return this.store.query((function(_this) {
+    return function(matches) {
+      var keys;
+      keys = _.map(matches, function(m) {
+        return [m.col, m.doc._id];
+      });
+      if (keys.length &gt; 0) {
+        return _this.store.removeBatch(keys, function() {
+          if (success != null) {
+            return success();
+          }
+        }, error);
+      } else {
+        if (success != null) {
+          return success();
+        }
+      }
+    };
+  })(this), {
+    index: "col",
+    keyRange: this.store.makeKeyRange({
+      only: name
+    }),
+    onError: error
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb" id="apidoc.element.minimongo.LocalStorageDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb
+        <span class="apidocSignatureSpan">(options, success)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalStorageDb(options, success) {
+  this.collections = {};
+  if (options &amp;&amp; options.namespace &amp;&amp; window.localStorage) {
+    this.namespace = options.namespace;
+  }
+  if (success) {
+    success(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.prototype.addCollection" id="apidoc.element.minimongo.LocalStorageDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorageDb.prototype.addCollection = function (name, success, error) {
+  var collection, namespace;
+  if (this.namespace) {
+    namespace = this.namespace + "." + name;
+  }
+  collection = new Collection(name, namespace);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection" id="apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LocalStorageDb.prototype.removeCollection = function (name, success, error) {
+  var i, key, keyToMatch, keys, _i, _j, _len, _ref;
+  if (this.namespace &amp;&amp; window.localStorage) {
+    keys = [];
+    for (i = _i = 0, _ref = window.localStorage.length; 0 &lt;= _ref ? _i &lt; _ref : _i &gt; _ref; i = 0 &lt;= _ref ? ++_i : --_i) {
+      keys.push(window.localStorage.key(i));
+    }
+    for (_j = 0, _len = keys.length; _j &lt; _len; _j++) {
+      key = keys[_j];
+      keyToMatch = this.namespace + '.' + name;
+      if (key.substring(0, keyToMatch.length) === keyToMatch) {
+        window.localStorage.removeItem(key);
+      }
+    }
+  }
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb" id="apidoc.element.minimongo.MemoryDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb
+        <span class="apidocSignatureSpan">(options, success)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryDb(options, success) {
+  this.collections = {};
+  if (success) {
+    success(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.prototype.addCollection" id="apidoc.element.minimongo.MemoryDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MemoryDb.prototype.addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.prototype.removeCollection" id="apidoc.element.minimongo.MemoryDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MemoryDb.prototype.removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb" id="apidoc.element.minimongo.RemoteDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb
+        <span class="apidocSignatureSpan">(url, client, httpClient)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RemoteDb(url, client, httpClient) {
+  this.url = url;
+  this.client = client;
+  this.collections = {};
+  this.httpClient = httpClient || jQueryHttpClient;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Uses AJAX-JSON calls to an API to query a real Mongo database. API is simple and contains only query, upsert, patch and remove commands
+.
+
+If the `client` field is passed to the constructor, it is appended as a query parameters (e.g. `?client=1234`) to each request made
+.
+
+Example code:
+
+```
+remoteDb = new minimongo.<span class="apidocCodeKeywordSpan">RemoteDb</span>("http://someserver.com/api/", "myclientid123
+")
+```
+
+This would create a remote db that would make the following call to the api for a find to collection abc:
+
+`GET http://someserver.com/api/abc?client=myclientid123`
+
+The client is optional and is a string that is passed in each call only to make authentication easier.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.prototype.addCollection" id="apidoc.element.minimongo.RemoteDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RemoteDb.prototype.addCollection = function (name, options, success, error) {
+  var collection, url, _ref;
+  if (options == null) {
+    options = {};
+  }
+  if (_.isFunction(options)) {
+    _ref = [{}, options, success], options = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  url = options.url || (this.url + name);
+  collection = new Collection(name, url, this.client, this.httpClient);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.prototype.removeCollection" id="apidoc.element.minimongo.RemoteDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RemoteDb.prototype.removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicaDb" id="apidoc.element.minimongo.ReplicaDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>ReplicaDb
+        <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReplicatingDb(masterDb, replicaDb) {
+  this.collections = {};
+  this.masterDb = masterDb;
+  this.replicaDb = replicaDb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb" id="apidoc.element.minimongo.ReplicatingDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb
+        <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReplicatingDb(masterDb, replicaDb) {
+  this.collections = {};
+  this.masterDb = masterDb;
+  this.replicaDb = replicaDb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.prototype.addCollection" id="apidoc.element.minimongo.ReplicatingDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ReplicatingDb.prototype.addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.masterDb[name], this.replicaDb[name]);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection" id="apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ReplicatingDb.prototype.removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb" id="apidoc.element.minimongo.WebSQLDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSQLDb(options, success, error) {
+  var checkV2, ex, migrateToV1, migrateToV2;
+  this.collections = {};
+  try {
+    this.db = window.openDatabase('minimongo_' + options.namespace, '', 'Minimongo:' + options.namespace, 5 * 1024 * 1024);
+    if (!this.db) {
+      return error(new Error("Failed to create database"));
+    }
+  } catch (_error) {
+    ex = _error;
+    if (error) {
+      error(ex);
+    }
+    return;
+  }
+  migrateToV1 = function(tx) {
+    return tx.executeSql('CREATE TABLE docs (\n  col TEXT NOT NULL,\n  id TEXT NOT NULL,\n  state TEXT NOT NULL,\n  doc TEXT,\n
+PRIMARY KEY (col, id));', [], doNothing, (function(tx, err) {
+      return error(err);
+    }));
+  };
+  migrateToV2 = function(tx) {
+    return tx.executeSql('ALTER TABLE docs ADD COLUMN base TEXT;', [], doNothing, (function(tx, err) {
+      return error(err);
+    }));
+  };
+  checkV2 = (function(_this) {
+    return function() {
+      if (_this.db.version === "1.0") {
+        return _this.db.changeVersion("1.0", "2.0", migrateToV2, error, function() {
+          if (success) {
+            return success(_this);
+          }
+        });
+      } else if (_this.db.version !== "2.0") {
+        return error("Unknown db version " + _this.db.version);
+      } else {
+        if (success) {
+          return success(_this);
+        }
+      }
+    };
+  })(this);
+  if (!this.db.version) {
+    this.db.changeVersion("", "1.0", migrateToV1, error, checkV2);
+  } else {
+    checkV2();
+  }
+  return this.db;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.prototype.addCollection" id="apidoc.element.minimongo.WebSQLDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb.prototype.addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">WebSQLDb.prototype.addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.db);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.prototype.removeCollection" id="apidoc.element.minimongo.WebSQLDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb.prototype.removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">WebSQLDb.prototype.removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  return this.db.transaction(function(tx) {
+    return tx.executeSql("DELETE FROM docs WHERE col = ?", [name], success, (function(tx, err) {
+      return error(err);
+    }));
+  }, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.jQueryHttpClient" id="apidoc.element.minimongo.jQueryHttpClient">
+        function <span class="apidocSignatureSpan">minimongo.</span>jQueryHttpClient
+        <span class="apidocSignatureSpan">(method, url, params, data, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jQueryHttpClient = function (method, url, params, data, success, error) {
+  var fullUrl, req;
+  fullUrl = url + "?" + $.param(params);
+  if (method === "GET") {
+    req = $.ajax(fullUrl, {
+      dataType: "json",
+      timeout: 180000
+    });
+  } else if (method === "DELETE") {
+    req = $.ajax(fullUrl, {
+      type: 'DELETE',
+      timeout: 60000
+    });
+  } else if (method === "POST" || method === "PATCH") {
+    req = $.ajax(fullUrl, {
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      timeout: 60000,
+      type: method
+    });
+  } else {
+    throw new Error("Unknown method " + method);
+  }
+  req.done(function(response, textStatus, jqXHR) {
+    return success(response || null);
+  });
+  return req.fail(function(jqXHR, textStatus, errorThrown) {
+    if (error) {
+      return error(jqXHR);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.autoselectLocalDb" id="apidoc.element.minimongo.utils.autoselectLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.autoselectLocalDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.autoselectLocalDb = function (options, success, error) {
+  var IndexedDb, LocalStorageDb, MemoryDb, WebSQLDb, browser;
+  IndexedDb = require('./IndexedDb');
+  WebSQLDb = require('./WebSQLDb');
+  LocalStorageDb = require('./LocalStorageDb');
+  MemoryDb = require('./MemoryDb');
+  browser = bowser.browser;
+  if (!isLocalStorageSupported()) {
+    return new MemoryDb(options, success);
+  }
+  if (window.cordova) {
+    console.log("Selecting WebSQLDb for Cordova");
+    return new WebSQLDb(options, success, error);
+  }
+  if (browser.android || browser.ios || browser.chrome || browser.safari || browser.opera || browser.blackberry) {
+    console.log("Selecting WebSQLDb for browser");
+    return new WebSQLDb(options, success, (function(_this) {
+      return function(err) {
+        console.log("Failed to create WebSQLDb: " + (err ? err.message : void 0));
+        return new IndexedDb(options, success, function(err) {
+          console.log("Failed to create IndexedDb: " + (err ? err.message : void 0));
+          return new MemoryDb(options, success);
+        });
+      };
+    })(this));
+  }
+  if (browser.firefox &amp;&amp; browser.version &gt;= 16) {
+    console.log("Selecting IndexedDb for browser");
+    return new IndexedDb(options, success, (function(_this) {
+      return function(err) {
+        console.log("Failed to create IndexedDb: " + (err ? err.message : void 0));
+        return new MemoryDb(options, success);
+      };
+    })(this));
+  }
+  console.log("Selecting LocalStorageDb for fallback");
+  return new LocalStorageDb(options, success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.cloneLocalDb" id="apidoc.element.minimongo.utils.cloneLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.cloneLocalDb
+        <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.cloneLocalDb = function (fromDb, toDb, success, error) {
+  var col, name, _ref;
+  _ref = fromDb.collections;
+  for (name in _ref) {
+    col = _ref[name];
+    if (!toDb[name]) {
+      toDb.addCollection(name);
+    }
+  }
+  return async.each(_.values(fromDb.collections), (function(_this) {
+    return function(fromCol, cb) {
+      var toCol;
+      toCol = toDb[fromCol.name];
+      return fromCol.find({}).fetch(function(items) {
+        return toCol.seed(items, function() {
+          return fromCol.pendingUpserts(function(upserts) {
+            return toCol.upsert(_.pluck(upserts, "doc"), _.pluck(upserts, "base"), function() {
+              return fromCol.pendingRemoves(function(removes) {
+                return async.eachSeries(removes, function(remove, cb2) {
+                  return toCol.remove(remove, function() {
+                    return cb2();
+                  }, cb2);
+                }, cb);
+              }, cb);
+            }, cb);
+          }, cb);
+        }, cb);
+      }, cb);
+    };
+  })(this), (function(_this) {
+    return function(err) {
+      if (err) {
+        return error(err);
+      }
+      return success();
+    };
+  })(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.compileDocumentSelector" id="apidoc.element.minimongo.utils.compileDocumentSelector">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.compileDocumentSelector
+        <span class="apidocSignatureSpan">(docSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.compileDocumentSelector = function (docSelector) {
+  var perKeySelectors = [];
+  _.each(docSelector, function (subSelector, key) {
+    if (key.substr(0, 1) === '$') {
+      // Outer operators are either logical operators (they recurse back into
+      // this function), or $where.
+      if (!_.has(LOGICAL_OPERATORS, key))
+        throw new Error("Unrecognized logical operator: " + key);
+      perKeySelectors.push(LOGICAL_OPERATORS[key](subSelector));
+    } else {
+      var lookUpByIndex = LocalCollection._makeLookupFunction(key);
+      var valueSelectorFunc = compileValueSelector(subSelector);
+      perKeySelectors.push(function (doc) {
+        var branchValues = lookUpByIndex(doc);
+        // We apply the selector to each "branched" value and return true if any
+        // match. This isn't 100% consistent with MongoDB; eg, see:
+        // https://jira.mongodb.org/browse/SERVER-8585
+        return _.any(branchValues, valueSelectorFunc);
+      });
+    }
+  });
+
+
+  return function (doc) {
+    return _.all(perKeySelectors, function (f) {
+      return f(doc);
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.createUid" id="apidoc.element.minimongo.utils.createUid">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.createUid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.createUid = function () {
+  return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r, v;
+    r = Math.random() * 16 | 0;
+    v = c === 'x' ? r : r &amp; 0x3 | 0x8;
+    return v.toString(16);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.filterFields" id="apidoc.element.minimongo.utils.filterFields">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.filterFields
+        <span class="apidocSignatureSpan">(items, fields)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.filterFields = function (items, fields) {
+  if (fields == null) {
+    fields = {};
+  }
+  if (_.keys(fields).length === 0) {
+    return items;
+  }
+  return _.map(items, function(item) {
+    var field, from, newItem, obj, path, pathElem, to, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2,
+_ref3;
+    newItem = {};
+    if (_.first(_.values(fields)) === 1) {
+      _ref = _.keys(fields).concat(["_id"]);
+      for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+        field = _ref[_i];
+        path = field.split(".");
+        obj = item;
+        for (_j = 0, _len1 = path.length; _j &lt; _len1; _j++) {
+          pathElem = path[_j];
+          if (obj) {
+            obj = obj[pathElem];
+          }
+        }
+        if (obj == null) {
+          continue;
+        }
+        from = item;
+        to = newItem;
+        _ref1 = _.initial(path);
+        for (_k = 0, _len2 = _ref1.length; _k &lt; _len2; _k++) {
+          pathElem = _ref1[_k];
+          to[pathElem] = to[pathElem] || {};
+          to = to[pathElem];
+          from = from[pathElem];
+        }
+        to[_.last(path)] = from[_.last(path)];
+      }
+      return newItem;
+    } else {
+      item = _.cloneDeep(item);
+      _ref2 = _.keys(fields);
+      for (_l = 0, _len3 = _ref2.length; _l &lt; _len3; _l++) {
+        field = _ref2[_l];
+        path = field.split(".");
+        obj = item;
+        _ref3 = _.initial(path);
+        for (_m = 0, _len4 = _ref3.length; _m &lt; _len4; _m++) {
+          pathElem = _ref3[_m];
+          if (obj) {
+            obj = obj[pathElem];
+          }
+        }
+        if (obj == null) {
+          continue;
+        }
+        delete obj[_.last(path)];
+      }
+      return item;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.migrateLocalDb" id="apidoc.element.minimongo.utils.migrateLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.migrateLocalDb
+        <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.migrateLocalDb = function (fromDb, toDb, success, error) {
+  var HybridDb, col, hybridDb, name, _ref;
+  HybridDb = require('./HybridDb');
+  hybridDb = new HybridDb(fromDb, toDb);
+  _ref = fromDb.collections;
+  for (name in _ref) {
+    col = _ref[name];
+    if (toDb[name]) {
+      hybridDb.addCollection(name);
+    }
+  }
+  return hybridDb.upload(success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.processFind" id="apidoc.element.minimongo.utils.processFind">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.processFind
+        <span class="apidocSignatureSpan">(items, selector, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.processFind = function (items, selector, options) {
+  var filtered;
+  filtered = _.filter(items, compileDocumentSelector(selector));
+  filtered = processNearOperator(selector, filtered);
+  filtered = processGeoIntersectsOperator(selector, filtered);
+  if (options &amp;&amp; options.sort) {
+    filtered.sort(compileSort(options.sort));
+  }
+  if (options &amp;&amp; options.skip) {
+    filtered = _.slice(filtered, options.skip);
+  }
+  if (options &amp;&amp; options.limit) {
+    filtered = _.take(filtered, options.limit);
+  }
+  if (options &amp;&amp; options.fields) {
+    filtered = exports.filterFields(filtered, options.fields);
+  }
+  filtered = JSON.parse(JSON.stringify(filtered));
+  return filtered;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.regularizeUpsert" id="apidoc.element.minimongo.utils.regularizeUpsert">
+        function <span class="apidocSignatureSpan">minimongo.</span>utils.regularizeUpsert
+        <span class="apidocSignatureSpan">(docs, bases, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils.regularizeUpsert = function (docs, bases, success, error) {
+  var item, items, _i, _len, _ref;
+  if (_.isFunction(bases)) {
+    _ref = [void 0, bases, success], bases = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  if (!_.isArray(docs)) {
+    docs = [docs];
+    bases = [bases];
+  } else {
+    bases = bases || [];
+  }
+  items = _.map(docs, function(doc, i) {
+    return {
+      doc: doc,
+      base: i &lt; bases.length ? bases[i] : void 0
+    };
+  });
+  for (_i = 0, _len = items.length; _i &lt; _len; _i++) {
+    item = items[_i];
+    if (!item.doc._id) {
+      item.doc._id = exports.createUid();
+    }
+    if (item.base &amp;&amp; !item.base._id) {
+      throw new Error("Base needs _id");
+    }
+    if (item.base &amp;&amp; item.base._id !== item.doc._id) {
+      throw new Error("Base needs same _id");
+    }
+  }
+  return [items, success, error];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.EJSON" id="apidoc.module.minimongo.EJSON">module minimongo.EJSON</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON._adjustTypesFromJSONValue" id="apidoc.element.minimongo.EJSON._adjustTypesFromJSONValue">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>_adjustTypesFromJSONValue
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_adjustTypesFromJSONValue = function (obj) {
+  if (obj === null)
+    return null;
+  var maybeChanged = fromJSONValueHelper(obj);
+  if (maybeChanged !== obj)
+    return maybeChanged;
+  _.each(obj, function (value, key) {
+    if (typeof value === 'object') {
+      var changed = fromJSONValueHelper(value);
+      if (value !== changed) {
+        obj[key] = changed;
+        return;
+      }
+      // if we get here, value is an object but not adjustable
+      // at this level.  recurse.
+      adjustTypesFromJSONValue(value);
+    }
+  });
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON._adjustTypesToJSONValue" id="apidoc.element.minimongo.EJSON._adjustTypesToJSONValue">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>_adjustTypesToJSONValue
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_adjustTypesToJSONValue = function (obj) {
+  if (obj === null)
+    return null;
+  var maybeChanged = toJSONValueHelper(obj);
+  if (maybeChanged !== undefined)
+    return maybeChanged;
+  _.each(obj, function (value, key) {
+    if (typeof value !== 'object' &amp;&amp; value !== undefined)
+      return; // continue
+    var changed = toJSONValueHelper(value);
+    if (changed) {
+      obj[key] = changed;
+      return; // on to the next key
+    }
+    // if we get here, value is an object but not adjustable
+    // at this level.  recurse.
+    adjustTypesToJSONValue(value);
+  });
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON._isCustomType" id="apidoc.element.minimongo.EJSON._isCustomType">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>_isCustomType
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isCustomType = function (obj) {
+  return obj &amp;&amp;
+    typeof obj.toJSONValue === 'function' &amp;&amp;
+    typeof obj.typeName === 'function' &amp;&amp;
+    _.has(customTypes, obj.typeName());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+},
+{ // Custom
+  matchJSONValue: function (obj) {
+    return _.has(obj, '$type') &amp;&amp; _.has(obj, '$value') &amp;&amp; _.size(obj) === 2;
+  },
+  matchObject: function (obj) {
+    return EJSON.<span class="apidocCodeKeywordSpan">_isCustomType</span>(obj);
+  },
+  toJSONValue: function (obj) {
+    return {$type: obj.typeName(), $value: obj.toJSONValue()};
+  },
+  fromJSONValue: function (obj) {
+    var typeName = obj.$type;
+    var converter = customTypes[typeName];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.addType" id="apidoc.element.minimongo.EJSON.addType">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>addType
+        <span class="apidocSignatureSpan">(name, factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addType = function (name, factory) {
+  if (_.has(customTypes, name))
+    throw new Error("Type " + name + " already present");
+  customTypes[name] = factory;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.clone" id="apidoc.element.minimongo.EJSON.clone">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>clone
+        <span class="apidocSignatureSpan">(v)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (v) {
+  var ret;
+  if (typeof v !== "object")
+    return v;
+  if (v === null)
+    return null; // null has typeof "object"
+  if (v instanceof Date)
+    return new Date(v.getTime());
+  if (EJSON.isBinary(v)) {
+    ret = EJSON.newBinary(v.length);
+    for (var i = 0; i &lt; v.length; i++) {
+      ret[i] = v[i];
+    }
+    return ret;
+  }
+  if (_.isArray(v) || _.isArguments(v)) {
+    // For some reason, _.map doesn't work in this context on Opera (weird test
+    // failures).
+    ret = [];
+    for (i = 0; i &lt; v.length; i++)
+      ret[i] = EJSON.clone(v[i]);
+    return ret;
+  }
+  // handle general user-defined typed Objects if they have a clone method
+  if (typeof v.clone === 'function') {
+    return v.clone();
+  }
+  // handle other objects
+  ret = {};
+  _.each(v, function (value, key) {
+    ret[key] = EJSON.clone(value);
+  });
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+EJSON.toJSONValue = function (item) {
+  var changed = toJSONValueHelper(item);
+  if (changed !== undefined)
+    return changed;
+  if (typeof item === 'object') {
+    item = EJSON.<span class="apidocCodeKeywordSpan">clone</span>(item);
+    adjustTypesToJSONValue(item);
+  }
+  return item;
+};
+
+//for both arrays and objects. Tries its best to just
+// use the object you hand it, but may return something
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.equals" id="apidoc.element.minimongo.EJSON.equals">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>equals
+        <span class="apidocSignatureSpan">(a, b, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equals = function (a, b, options) {
+  var i;
+  var keyOrderSensitive = !!(options &amp;&amp; options.keyOrderSensitive);
+  if (a === b)
+    return true;
+  if (!a || !b) // if either one is falsy, they'd have to be === to be equal
+    return false;
+  if (!(typeof a === 'object' &amp;&amp; typeof b === 'object'))
+    return false;
+  if (a instanceof Date &amp;&amp; b instanceof Date)
+    return a.valueOf() === b.valueOf();
+  if (EJSON.isBinary(a) &amp;&amp; EJSON.isBinary(b)) {
+    if (a.length !== b.length)
+      return false;
+    for (i = 0; i &lt; a.length; i++) {
+      if (a[i] !== b[i])
+        return false;
+    }
+    return true;
+  }
+  if (typeof (a.equals) === 'function')
+    return a.equals(b, options);
+  if (a instanceof Array) {
+    if (!(b instanceof Array))
+      return false;
+    if (a.length !== b.length)
+      return false;
+    for (i = 0; i &lt; a.length; i++) {
+      if (!EJSON.equals(a[i], b[i], options))
+        return false;
+    }
+    return true;
+  }
+  // fall back to structural equality of objects
+  var ret;
+  if (keyOrderSensitive) {
+    var bKeys = [];
+    _.each(b, function (val, x) {
+        bKeys.push(x);
+    });
+    i = 0;
+    ret = _.all(a, function (val, x) {
+      if (i &gt;= bKeys.length) {
+        return false;
+      }
+      if (x !== bKeys[i]) {
+        return false;
+      }
+      if (!EJSON.equals(val, b[bKeys[i]], options)) {
+        return false;
+      }
+      i++;
+      return true;
+    });
+    return ret &amp;&amp; i === bKeys.length;
+  } else {
+    i = 0;
+    ret = _.all(a, function (val, key) {
+      if (!_.has(b, key)) {
+        return false;
+      }
+      if (!EJSON.equals(val, b[key], options)) {
+        return false;
+      }
+      i++;
+      return true;
+    });
+    return ret &amp;&amp; _.size(b) === i;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  for (i = 0; i &lt; a.length; i++) {
+    if (a[i] !== b[i])
+      return false;
+  }
+  return true;
+}
+if (typeof (a.equals) === 'function')
+  return a.<span class="apidocCodeKeywordSpan">equals</span>(b, options);
+if (a instanceof Array) {
+  if (!(b instanceof Array))
+    return false;
+  if (a.length !== b.length)
+    return false;
+  for (i = 0; i &lt; a.length; i++) {
+    if (!EJSON.equals(a[i], b[i], options))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.fromJSONValue" id="apidoc.element.minimongo.EJSON.fromJSONValue">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>fromJSONValue
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromJSONValue = function (item) {
+  var changed = fromJSONValueHelper(item);
+  if (changed === item &amp;&amp; typeof item === 'object') {
+    item = EJSON.clone(item);
+    adjustTypesFromJSONValue(item);
+    return item;
+  } else {
+    return changed;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      newObj[key] = EJSON.toJSONValue(value);
+    });
+    return {$escape: newObj};
+  },
+  fromJSONValue: function (obj) {
+    var newObj = {};
+    _.each(obj.$escape, function (value, key) {
+      newObj[key] = EJSON.<span class="apidocCodeKeywordSpan">fromJSONValue</span>(value);
+    });
+    return newObj;
+  }
+},
+{ // Custom
+  matchJSONValue: function (obj) {
+    return _.has(obj, '$type') &amp;&amp; _.has(obj, '$value') &amp;&amp; _.size(obj) === 2;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.isBinary" id="apidoc.element.minimongo.EJSON.isBinary">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>isBinary
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isBinary = function (obj) {
+  return (typeof Uint8Array !== 'undefined' &amp;&amp; obj instanceof Uint8Array) ||
+    (obj &amp;&amp; obj.$Uint8ArrayPolyfill);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return true;
+if (!a || !b) // if either one is falsy, they'd have to be === to be equal
+  return false;
+if (!(typeof a === 'object' &amp;&amp; typeof b === 'object'))
+  return false;
+if (a instanceof Date &amp;&amp; b instanceof Date)
+  return a.valueOf() === b.valueOf();
+if (EJSON.<span class="apidocCodeKeywordSpan">isBinary</span>(a) &amp;&amp; EJSON.isBinary(b)) {
+  if (a.length !== b.length)
+    return false;
+  for (i = 0; i &lt; a.length; i++) {
+    if (a[i] !== b[i])
+      return false;
+  }
+  return true;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.parse" id="apidoc.element.minimongo.EJSON.parse">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>parse
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (item) {
+  return EJSON.fromJSONValue(JSON.parse(item));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+EJSON.stringify = function (item) {
+  return JSON.stringify(EJSON.toJSONValue(item));
+};
+
+EJSON.parse = function (item) {
+  return EJSON.fromJSONValue(JSON.<span class="apidocCodeKeywordSpan">parse</span>(item));
+};
+
+EJSON.isBinary = function (obj) {
+  return (typeof Uint8Array !== 'undefined' &amp;&amp; obj instanceof Uint8Array) ||
+    (obj &amp;&amp; obj.$Uint8ArrayPolyfill);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.stringify" id="apidoc.element.minimongo.EJSON.stringify">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>stringify
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (item) {
+  return JSON.stringify(EJSON.toJSONValue(item));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return item;
+  } else {
+    return changed;
+  }
+};
+
+EJSON.stringify = function (item) {
+  return JSON.<span class="apidocCodeKeywordSpan">stringify</span>(EJSON.toJSONValue(item));
+};
+
+EJSON.parse = function (item) {
+  return EJSON.fromJSONValue(JSON.parse(item));
+};
+
+EJSON.isBinary = function (obj) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.EJSON.toJSONValue" id="apidoc.element.minimongo.EJSON.toJSONValue">
+        function <span class="apidocSignatureSpan">minimongo.EJSON.</span>toJSONValue
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSONValue = function (item) {
+  var changed = toJSONValueHelper(item);
+  if (changed !== undefined)
+    return changed;
+  if (typeof item === 'object') {
+    item = EJSON.clone(item);
+    adjustTypesToJSONValue(item);
+  }
+  return item;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return _.any(builtinConverters, function (converter) {
+    return converter.matchJSONValue(obj);
+  });
+},
+toJSONValue: function (obj) {
+  var newObj = {};
+  _.each(obj, function (value, key) {
+    newObj[key] = EJSON.<span class="apidocCodeKeywordSpan">toJSONValue</span>(value);
+  });
+  return {$escape: newObj};
+},
+fromJSONValue: function (obj) {
+  var newObj = {};
+  _.each(obj.$escape, function (value, key) {
+    newObj[key] = EJSON.fromJSONValue(value);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.HybridDb" id="apidoc.module.minimongo.HybridDb">module minimongo.HybridDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.HybridDb" id="apidoc.element.minimongo.HybridDb.HybridDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>HybridDb
+        <span class="apidocSignatureSpan">(localDb, remoteDb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HybridDb(localDb, remoteDb) {
+  this.localDb = localDb;
+  this.remoteDb = remoteDb;
+  this.collections = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.HybridDb.prototype" id="apidoc.module.minimongo.HybridDb.prototype">module minimongo.HybridDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.addCollection" id="apidoc.element.minimongo.HybridDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, options, success, error) {
+  var collection, _ref;
+  if (_.isFunction(options)) {
+    _ref = [{}, options, success], options = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  collection = new HybridCollection(name, this.localDb[name], this.remoteDb[name], options);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.removeCollection" id="apidoc.element.minimongo.HybridDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.upload" id="apidoc.element.minimongo.HybridDb.prototype.upload">
+        function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>upload
+        <span class="apidocSignatureSpan">(success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (success, error) {
+  var cols, uploadCols;
+  cols = _.values(this.collections);
+  uploadCols = function(cols, success, error) {
+    var col;
+    col = _.first(cols);
+    if (col) {
+      return col.upload(function() {
+        return uploadCols(_.rest(cols), success, error);
+      }, function(err) {
+        return error(err);
+      });
+    } else {
+      return success();
+    }
+  };
+  return uploadCols(cols, success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+hybridDb = new HybridDb(localDb, remoteDb)
+```
+
+Be sure to add the same collections to all three databases (local, hybrid and remote).
+
+Then query the hybridDb (`find` and `findOne`) to have it get results and correctly combine them with any pending local results.
+If you are not interested in caching results, add `{ cacheFind: false, cacheFindOne: false }` to the options of `find` or `findOne
+` or to the `addCollection` options.
+
+When upserts and removes are done on the HybridDb, they are queued up in the LocalDb until `hybridDb.<span class="apidocCodeKeywordSpan
+">upload</span>(success, error)` is called.
+
+`upload` will go through each collection and send any upserts or removes to the remoteDb.
+
+`findOne` will not return an interim `null` result, but will only return interim results when one is present.
+
+### RemoteDb
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.HybridDb.prototype.addCollection" id="apidoc.module.minimongo.HybridDb.prototype.addCollection">module minimongo.HybridDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.HybridDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, options, success, error) {
+  var collection, _ref;
+  if (_.isFunction(options)) {
+    _ref = [{}, options, success], options = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  collection = new HybridCollection(name, this.localDb[name], this.remoteDb[name], options);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.HybridDb.prototype.removeCollection" id="apidoc.module.minimongo.HybridDb.prototype.removeCollection">module minimongo.HybridDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.HybridDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.HybridDb.prototype.upload" id="apidoc.module.minimongo.HybridDb.prototype.upload">module minimongo.HybridDb.prototype.upload</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.HybridDb.prototype.upload.upload" id="apidoc.element.minimongo.HybridDb.prototype.upload.upload">
+        function <span class="apidocSignatureSpan">minimongo.HybridDb.prototype.</span>upload
+        <span class="apidocSignatureSpan">(success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (success, error) {
+  var cols, uploadCols;
+  cols = _.values(this.collections);
+  uploadCols = function(cols, success, error) {
+    var col;
+    col = _.first(cols);
+    if (col) {
+      return col.upload(function() {
+        return uploadCols(_.rest(cols), success, error);
+      }, function(err) {
+        return error(err);
+      });
+    } else {
+      return success();
+    }
+  };
+  return uploadCols(cols, success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+hybridDb = new HybridDb(localDb, remoteDb)
+```
+
+Be sure to add the same collections to all three databases (local, hybrid and remote).
+
+Then query the hybridDb (`find` and `findOne`) to have it get results and correctly combine them with any pending local results.
+If you are not interested in caching results, add `{ cacheFind: false, cacheFindOne: false }` to the options of `find` or `findOne
+` or to the `addCollection` options.
+
+When upserts and removes are done on the HybridDb, they are queued up in the LocalDb until `hybridDb.<span class="apidocCodeKeywordSpan
+">upload</span>(success, error)` is called.
+
+`upload` will go through each collection and send any upserts or removes to the remoteDb.
+
+`findOne` will not return an interim `null` result, but will only return interim results when one is present.
+
+### RemoteDb
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.IndexedDb" id="apidoc.module.minimongo.IndexedDb">module minimongo.IndexedDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.IndexedDb" id="apidoc.element.minimongo.IndexedDb.IndexedDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>IndexedDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IndexedDb(options, success, error) {
+  var ex;
+  this.collections = {};
+  try {
+    this.store = new IDBStore({
+      dbVersion: 1,
+      storeName: 'minimongo_' + options.namespace,
+      keyPath: ['col', 'doc._id'],
+      autoIncrement: false,
+      onStoreReady: (function(_this) {
+        return function() {
+          if (success) {
+            return success(_this);
+          }
+        };
+      })(this),
+      onError: error,
+      indexes: [
+        {
+          name: 'col',
+          keyPath: 'col',
+          unique: false,
+          multiEntry: false
+        }, {
+          name: 'col-state',
+          keyPath: ['col', 'state'],
+          unique: false,
+          multiEntry: false
+        }
+      ]
+    });
+  } catch (_error) {
+    ex = _error;
+    if (error) {
+      error(ex);
+    }
+    return;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.IndexedDb.prototype" id="apidoc.module.minimongo.IndexedDb.prototype">module minimongo.IndexedDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.prototype.addCollection" id="apidoc.element.minimongo.IndexedDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.store);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.prototype.removeCollection" id="apidoc.element.minimongo.IndexedDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  return this.store.query((function(_this) {
+    return function(matches) {
+      var keys;
+      keys = _.map(matches, function(m) {
+        return [m.col, m.doc._id];
+      });
+      if (keys.length &gt; 0) {
+        return _this.store.removeBatch(keys, function() {
+          if (success != null) {
+            return success();
+          }
+        }, error);
+      } else {
+        if (success != null) {
+          return success();
+        }
+      }
+    };
+  })(this), {
+    index: "col",
+    keyRange: this.store.makeKeyRange({
+      only: name
+    }),
+    onError: error
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.IndexedDb.prototype.addCollection" id="apidoc.module.minimongo.IndexedDb.prototype.addCollection">module minimongo.IndexedDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.IndexedDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.store);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.IndexedDb.prototype.removeCollection" id="apidoc.module.minimongo.IndexedDb.prototype.removeCollection">module minimongo.IndexedDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.IndexedDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.IndexedDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.IndexedDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  return this.store.query((function(_this) {
+    return function(matches) {
+      var keys;
+      keys = _.map(matches, function(m) {
+        return [m.col, m.doc._id];
+      });
+      if (keys.length &gt; 0) {
+        return _this.store.removeBatch(keys, function() {
+          if (success != null) {
+            return success();
+          }
+        }, error);
+      } else {
+        if (success != null) {
+          return success();
+        }
+      }
+    };
+  })(this), {
+    index: "col",
+    keyRange: this.store.makeKeyRange({
+      only: name
+    }),
+    onError: error
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.LocalStorageDb" id="apidoc.module.minimongo.LocalStorageDb">module minimongo.LocalStorageDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.LocalStorageDb" id="apidoc.element.minimongo.LocalStorageDb.LocalStorageDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>LocalStorageDb
+        <span class="apidocSignatureSpan">(options, success)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalStorageDb(options, success) {
+  this.collections = {};
+  if (options &amp;&amp; options.namespace &amp;&amp; window.localStorage) {
+    this.namespace = options.namespace;
+  }
+  if (success) {
+    success(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.LocalStorageDb.prototype" id="apidoc.module.minimongo.LocalStorageDb.prototype">module minimongo.LocalStorageDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.prototype.addCollection" id="apidoc.element.minimongo.LocalStorageDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection, namespace;
+  if (this.namespace) {
+    namespace = this.namespace + "." + name;
+  }
+  collection = new Collection(name, namespace);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection" id="apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  var i, key, keyToMatch, keys, _i, _j, _len, _ref;
+  if (this.namespace &amp;&amp; window.localStorage) {
+    keys = [];
+    for (i = _i = 0, _ref = window.localStorage.length; 0 &lt;= _ref ? _i &lt; _ref : _i &gt; _ref; i = 0 &lt;= _ref ? ++_i : --_i) {
+      keys.push(window.localStorage.key(i));
+    }
+    for (_j = 0, _len = keys.length; _j &lt; _len; _j++) {
+      key = keys[_j];
+      keyToMatch = this.namespace + '.' + name;
+      if (key.substring(0, keyToMatch.length) === keyToMatch) {
+        window.localStorage.removeItem(key);
+      }
+    }
+  }
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.LocalStorageDb.prototype.addCollection" id="apidoc.module.minimongo.LocalStorageDb.prototype.addCollection">module minimongo.LocalStorageDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.LocalStorageDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection, namespace;
+  if (this.namespace) {
+    namespace = this.namespace + "." + name;
+  }
+  collection = new Collection(name, namespace);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.LocalStorageDb.prototype.removeCollection" id="apidoc.module.minimongo.LocalStorageDb.prototype.removeCollection">module minimongo.LocalStorageDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.LocalStorageDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.LocalStorageDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  var i, key, keyToMatch, keys, _i, _j, _len, _ref;
+  if (this.namespace &amp;&amp; window.localStorage) {
+    keys = [];
+    for (i = _i = 0, _ref = window.localStorage.length; 0 &lt;= _ref ? _i &lt; _ref : _i &gt; _ref; i = 0 &lt;= _ref ? ++_i : --_i) {
+      keys.push(window.localStorage.key(i));
+    }
+    for (_j = 0, _len = keys.length; _j &lt; _len; _j++) {
+      key = keys[_j];
+      keyToMatch = this.namespace + '.' + name;
+      if (key.substring(0, keyToMatch.length) === keyToMatch) {
+        window.localStorage.removeItem(key);
+      }
+    }
+  }
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.MemoryDb" id="apidoc.module.minimongo.MemoryDb">module minimongo.MemoryDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.MemoryDb" id="apidoc.element.minimongo.MemoryDb.MemoryDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>MemoryDb
+        <span class="apidocSignatureSpan">(options, success)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryDb(options, success) {
+  this.collections = {};
+  if (success) {
+    success(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.MemoryDb.prototype" id="apidoc.module.minimongo.MemoryDb.prototype">module minimongo.MemoryDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.prototype.addCollection" id="apidoc.element.minimongo.MemoryDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.prototype.removeCollection" id="apidoc.element.minimongo.MemoryDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.MemoryDb.prototype.addCollection" id="apidoc.module.minimongo.MemoryDb.prototype.addCollection">module minimongo.MemoryDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.MemoryDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.MemoryDb.prototype.removeCollection" id="apidoc.module.minimongo.MemoryDb.prototype.removeCollection">module minimongo.MemoryDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.MemoryDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.MemoryDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.MemoryDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.RemoteDb" id="apidoc.module.minimongo.RemoteDb">module minimongo.RemoteDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.RemoteDb" id="apidoc.element.minimongo.RemoteDb.RemoteDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>RemoteDb
+        <span class="apidocSignatureSpan">(url, client, httpClient)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RemoteDb(url, client, httpClient) {
+  this.url = url;
+  this.client = client;
+  this.collections = {};
+  this.httpClient = httpClient || jQueryHttpClient;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Uses AJAX-JSON calls to an API to query a real Mongo database. API is simple and contains only query, upsert, patch and remove commands
+.
+
+If the `client` field is passed to the constructor, it is appended as a query parameters (e.g. `?client=1234`) to each request made
+.
+
+Example code:
+
+```
+remoteDb = new minimongo.<span class="apidocCodeKeywordSpan">RemoteDb</span>("http://someserver.com/api/", "myclientid123
+")
+```
+
+This would create a remote db that would make the following call to the api for a find to collection abc:
+
+`GET http://someserver.com/api/abc?client=myclientid123`
+
+The client is optional and is a string that is passed in each call only to make authentication easier.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.RemoteDb.prototype" id="apidoc.module.minimongo.RemoteDb.prototype">module minimongo.RemoteDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.prototype.addCollection" id="apidoc.element.minimongo.RemoteDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, options, success, error) {
+  var collection, url, _ref;
+  if (options == null) {
+    options = {};
+  }
+  if (_.isFunction(options)) {
+    _ref = [{}, options, success], options = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  url = options.url || (this.url + name);
+  collection = new Collection(name, url, this.client, this.httpClient);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.prototype.removeCollection" id="apidoc.element.minimongo.RemoteDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.RemoteDb.prototype.addCollection" id="apidoc.module.minimongo.RemoteDb.prototype.addCollection">module minimongo.RemoteDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.RemoteDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, options, success, error) {
+  var collection, url, _ref;
+  if (options == null) {
+    options = {};
+  }
+  if (_.isFunction(options)) {
+    _ref = [{}, options, success], options = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  url = options.url || (this.url + name);
+  collection = new Collection(name, url, this.client, this.httpClient);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.RemoteDb.prototype.removeCollection" id="apidoc.module.minimongo.RemoteDb.prototype.removeCollection">module minimongo.RemoteDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.RemoteDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.RemoteDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.RemoteDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.ReplicaDb" id="apidoc.module.minimongo.ReplicaDb">module minimongo.ReplicaDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicaDb.ReplicaDb" id="apidoc.element.minimongo.ReplicaDb.ReplicaDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>ReplicaDb
+        <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReplicatingDb(masterDb, replicaDb) {
+  this.collections = {};
+  this.masterDb = masterDb;
+  this.replicaDb = replicaDb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.ReplicaDb.prototype" id="apidoc.module.minimongo.ReplicaDb.prototype">module minimongo.ReplicaDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicaDb.prototype.addCollection" id="apidoc.element.minimongo.ReplicaDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.ReplicaDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicaDb.prototype.removeCollection" id="apidoc.element.minimongo.ReplicaDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.ReplicaDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.ReplicatingDb" id="apidoc.module.minimongo.ReplicatingDb">module minimongo.ReplicatingDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.ReplicatingDb" id="apidoc.element.minimongo.ReplicatingDb.ReplicatingDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>ReplicatingDb
+        <span class="apidocSignatureSpan">(masterDb, replicaDb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReplicatingDb(masterDb, replicaDb) {
+  this.collections = {};
+  this.masterDb = masterDb;
+  this.replicaDb = replicaDb;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.ReplicatingDb.prototype" id="apidoc.module.minimongo.ReplicatingDb.prototype">module minimongo.ReplicatingDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.prototype.addCollection" id="apidoc.element.minimongo.ReplicatingDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.masterDb[name], this.replicaDb[name]);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection" id="apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.ReplicatingDb.prototype.addCollection" id="apidoc.module.minimongo.ReplicatingDb.prototype.addCollection">module minimongo.ReplicatingDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.ReplicatingDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.masterDb[name], this.replicaDb[name]);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.ReplicatingDb.prototype.removeCollection" id="apidoc.module.minimongo.ReplicatingDb.prototype.removeCollection">module minimongo.ReplicatingDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.ReplicatingDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.ReplicatingDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  if (success != null) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.WebSQLDb" id="apidoc.module.minimongo.WebSQLDb">module minimongo.WebSQLDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.WebSQLDb" id="apidoc.element.minimongo.WebSQLDb.WebSQLDb">
+        function <span class="apidocSignatureSpan">minimongo.</span>WebSQLDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSQLDb(options, success, error) {
+  var checkV2, ex, migrateToV1, migrateToV2;
+  this.collections = {};
+  try {
+    this.db = window.openDatabase('minimongo_' + options.namespace, '', 'Minimongo:' + options.namespace, 5 * 1024 * 1024);
+    if (!this.db) {
+      return error(new Error("Failed to create database"));
+    }
+  } catch (_error) {
+    ex = _error;
+    if (error) {
+      error(ex);
+    }
+    return;
+  }
+  migrateToV1 = function(tx) {
+    return tx.executeSql('CREATE TABLE docs (\n  col TEXT NOT NULL,\n  id TEXT NOT NULL,\n  state TEXT NOT NULL,\n  doc TEXT,\n
+PRIMARY KEY (col, id));', [], doNothing, (function(tx, err) {
+      return error(err);
+    }));
+  };
+  migrateToV2 = function(tx) {
+    return tx.executeSql('ALTER TABLE docs ADD COLUMN base TEXT;', [], doNothing, (function(tx, err) {
+      return error(err);
+    }));
+  };
+  checkV2 = (function(_this) {
+    return function() {
+      if (_this.db.version === "1.0") {
+        return _this.db.changeVersion("1.0", "2.0", migrateToV2, error, function() {
+          if (success) {
+            return success(_this);
+          }
+        });
+      } else if (_this.db.version !== "2.0") {
+        return error("Unknown db version " + _this.db.version);
+      } else {
+        if (success) {
+          return success(_this);
+        }
+      }
+    };
+  })(this);
+  if (!this.db.version) {
+    this.db.changeVersion("", "1.0", migrateToV1, error, checkV2);
+  } else {
+    checkV2();
+  }
+  return this.db;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.WebSQLDb.prototype" id="apidoc.module.minimongo.WebSQLDb.prototype">module minimongo.WebSQLDb.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.prototype.addCollection" id="apidoc.element.minimongo.WebSQLDb.prototype.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.db);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.prototype.removeCollection" id="apidoc.element.minimongo.WebSQLDb.prototype.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  return this.db.transaction(function(tx) {
+    return tx.executeSql("DELETE FROM docs WHERE col = ?", [name], success, (function(tx, err) {
+      return error(err);
+    }));
+  }, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.WebSQLDb.prototype.addCollection" id="apidoc.module.minimongo.WebSQLDb.prototype.addCollection">module minimongo.WebSQLDb.prototype.addCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.prototype.addCollection.addCollection" id="apidoc.element.minimongo.WebSQLDb.prototype.addCollection.addCollection">
+        function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>addCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCollection = function (name, success, error) {
+  var collection;
+  collection = new Collection(name, this.db);
+  this[name] = collection;
+  this.collections[name] = collection;
+  if (success) {
+    return success();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalDb = minimongo.MemoryDb;
+
+// Create local db (in memory database with no backing)
+db = new LocalDb();
+
+// Add a collection to the database
+db.<span class="apidocCodeKeywordSpan">addCollection</span>("animals");
+
+doc = { species: "dog", name: "Bingo" };
+
+// Always use upsert for both inserts and modifies
+db.animals.upsert(doc, function() {
+	// Success:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.WebSQLDb.prototype.removeCollection" id="apidoc.module.minimongo.WebSQLDb.prototype.removeCollection">module minimongo.WebSQLDb.prototype.removeCollection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.WebSQLDb.prototype.removeCollection.removeCollection" id="apidoc.element.minimongo.WebSQLDb.prototype.removeCollection.removeCollection">
+        function <span class="apidocSignatureSpan">minimongo.WebSQLDb.prototype.</span>removeCollection
+        <span class="apidocSignatureSpan">(name, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeCollection = function (name, success, error) {
+  delete this[name];
+  delete this.collections[name];
+  return this.db.transaction(function(tx) {
+    return tx.executeSql("DELETE FROM docs WHERE col = ?", [name], success, (function(tx, err) {
+      return error(err);
+    }));
+  }, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.jQueryHttpClient" id="apidoc.module.minimongo.jQueryHttpClient">module minimongo.jQueryHttpClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.jQueryHttpClient.jQueryHttpClient" id="apidoc.element.minimongo.jQueryHttpClient.jQueryHttpClient">
+        function <span class="apidocSignatureSpan">minimongo.</span>jQueryHttpClient
+        <span class="apidocSignatureSpan">(method, url, params, data, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">jQueryHttpClient = function (method, url, params, data, success, error) {
+  var fullUrl, req;
+  fullUrl = url + "?" + $.param(params);
+  if (method === "GET") {
+    req = $.ajax(fullUrl, {
+      dataType: "json",
+      timeout: 180000
+    });
+  } else if (method === "DELETE") {
+    req = $.ajax(fullUrl, {
+      type: 'DELETE',
+      timeout: 60000
+    });
+  } else if (method === "POST" || method === "PATCH") {
+    req = $.ajax(fullUrl, {
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      timeout: 60000,
+      type: method
+    });
+  } else {
+    throw new Error("Unknown method " + method);
+  }
+  req.done(function(response, textStatus, jqXHR) {
+    return success(response || null);
+  });
+  return req.fail(function(jqXHR, textStatus, errorThrown) {
+    if (error) {
+      return error(jqXHR);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.selector" id="apidoc.module.minimongo.selector">module minimongo.selector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.selector.compileDocumentSelector" id="apidoc.element.minimongo.selector.compileDocumentSelector">
+        function <span class="apidocSignatureSpan">minimongo.selector.</span>compileDocumentSelector
+        <span class="apidocSignatureSpan">(docSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileDocumentSelector = function (docSelector) {
+  var perKeySelectors = [];
+  _.each(docSelector, function (subSelector, key) {
+    if (key.substr(0, 1) === '$') {
+      // Outer operators are either logical operators (they recurse back into
+      // this function), or $where.
+      if (!_.has(LOGICAL_OPERATORS, key))
+        throw new Error("Unrecognized logical operator: " + key);
+      perKeySelectors.push(LOGICAL_OPERATORS[key](subSelector));
+    } else {
+      var lookUpByIndex = LocalCollection._makeLookupFunction(key);
+      var valueSelectorFunc = compileValueSelector(subSelector);
+      perKeySelectors.push(function (doc) {
+        var branchValues = lookUpByIndex(doc);
+        // We apply the selector to each "branched" value and return true if any
+        // match. This isn't 100% consistent with MongoDB; eg, see:
+        // https://jira.mongodb.org/browse/SERVER-8585
+        return _.any(branchValues, valueSelectorFunc);
+      });
+    }
+  });
+
+
+  return function (doc) {
+    return _.all(perKeySelectors, function (f) {
+      return f(doc);
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (success != null) {
+    return success();
+  }
+};
+
+Collection.prototype.uncache = function(selector, success, error) {
+  var compiledSelector, items;
+  compiledSelector = utils.<span class="apidocCodeKeywordSpan">compileDocumentSelector</span>(selector);
+  items = _.filter(_.values(this.items), (function(_this) {
+    return function(item) {
+      return (_this.upserts[item._id] != null) || !compiledSelector(item);
+    };
+  })(this));
+  this.items = _.object(_.pluck(items, "_id"), items);
+  if (success != null) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.selector.compileSort" id="apidoc.element.minimongo.selector.compileSort">
+        function <span class="apidocSignatureSpan">minimongo.selector.</span>compileSort
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileSort = function (spec) {
+  var sortSpecParts = [];
+
+  if (spec instanceof Array) {
+    for (var i = 0; i &lt; spec.length; i++) {
+      if (typeof spec[i] === "string") {
+        sortSpecParts.push({
+          lookup: LocalCollection._makeLookupFunction(spec[i]),
+          ascending: true
+        });
+      } else {
+        sortSpecParts.push({
+          lookup: LocalCollection._makeLookupFunction(spec[i][0]),
+          ascending: spec[i][1] !== "desc"
+        });
+      }
+    }
+  } else if (typeof spec === "object") {
+    for (var key in spec) {
+      sortSpecParts.push({
+        lookup: LocalCollection._makeLookupFunction(key),
+        ascending: spec[key] &gt;= 0
+      });
+    }
+  } else {
+    throw Error("Bad sort specification: ", JSON.stringify(spec));
+  }
+
+  if (sortSpecParts.length === 0)
+    return function () {return 0;};
+
+  // reduceValue takes in all the possible values for the sort key along various
+  // branches, and returns the min or max value (according to the bool
+  // findMin). Each value can itself be an array, and we look at its values
+  // too. (ie, we do a single level of flattening on branchValues, then find the
+  // min/max.)
+  var reduceValue = function (branchValues, findMin) {
+    var reduced;
+    var first = true;
+    // Iterate over all the values found in all the branches, and if a value is
+    // an array itself, iterate over the values in the array separately.
+    _.each(branchValues, function (branchValue) {
+      // Value not an array? Pretend it is.
+      if (!isArray(branchValue))
+        branchValue = [branchValue];
+      // Value is an empty array? Pretend it was missing, since that's where it
+      // should be sorted.
+      if (isArray(branchValue) &amp;&amp; branchValue.length === 0)
+        branchValue = [undefined];
+      _.each(branchValue, function (value) {
+        // We should get here at least once: lookup functions return non-empty
+        // arrays, so the outer loop runs at least once, and we prevented
+        // branchValue from being an empty array.
+        if (first) {
+          reduced = value;
+          first = false;
+        } else {
+          // Compare the value we found to the value we found so far, saving it
+          // if it's less (for an ascending sort) or more (for a descending
+          // sort).
+          var cmp = LocalCollection._f._cmp(reduced, value);
+          if ((findMin &amp;&amp; cmp &gt; 0) || (!findMin &amp;&amp; cmp &lt; 0))
+            reduced = value;
+        }
+      });
+    });
+    return reduced;
+  };
+
+  return function (a, b) {
+    for (var i = 0; i &lt; sortSpecParts.length; ++i) {
+      var specPart = sortSpecParts[i];
+      var aValue = reduceValue(specPart.lookup(a), specPart.ascending);
+      var bValue = reduceValue(specPart.lookup(b), specPart.ascending);
+      var compare = LocalCollection._f._cmp(aValue, bValue);
+      if (compare !== 0)
+        return specPart.ascending ? compare : -compare;
+    };
+    return 0;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils" id="apidoc.module.minimongo.utils">module minimongo.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.autoselectLocalDb" id="apidoc.element.minimongo.utils.autoselectLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>autoselectLocalDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">autoselectLocalDb = function (options, success, error) {
+  var IndexedDb, LocalStorageDb, MemoryDb, WebSQLDb, browser;
+  IndexedDb = require('./IndexedDb');
+  WebSQLDb = require('./WebSQLDb');
+  LocalStorageDb = require('./LocalStorageDb');
+  MemoryDb = require('./MemoryDb');
+  browser = bowser.browser;
+  if (!isLocalStorageSupported()) {
+    return new MemoryDb(options, success);
+  }
+  if (window.cordova) {
+    console.log("Selecting WebSQLDb for Cordova");
+    return new WebSQLDb(options, success, error);
+  }
+  if (browser.android || browser.ios || browser.chrome || browser.safari || browser.opera || browser.blackberry) {
+    console.log("Selecting WebSQLDb for browser");
+    return new WebSQLDb(options, success, (function(_this) {
+      return function(err) {
+        console.log("Failed to create WebSQLDb: " + (err ? err.message : void 0));
+        return new IndexedDb(options, success, function(err) {
+          console.log("Failed to create IndexedDb: " + (err ? err.message : void 0));
+          return new MemoryDb(options, success);
+        });
+      };
+    })(this));
+  }
+  if (browser.firefox &amp;&amp; browser.version &gt;= 16) {
+    console.log("Selecting IndexedDb for browser");
+    return new IndexedDb(options, success, (function(_this) {
+      return function(err) {
+        console.log("Failed to create IndexedDb: " + (err ? err.message : void 0));
+        return new MemoryDb(options, success);
+      };
+    })(this));
+  }
+  console.log("Selecting LocalStorageDb for fallback");
+  return new LocalStorageDb(options, success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
+
+Uses code from Meteor.js minimongo package, reworked to support more geospatial queries and made npm+browserify friendly. It was
+ forked in January 2014.
+
+It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb
+).
+
+Autoselection is possible with `utils.<span class="apidocCodeKeywordSpan">autoselectLocalDb</span>(options, success, error)`. success
+ is called with the selected database.
+
+## Usage
+
+Minimongo is designed to be used with browserify.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.cloneLocalDb" id="apidoc.element.minimongo.utils.cloneLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>cloneLocalDb
+        <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cloneLocalDb = function (fromDb, toDb, success, error) {
+  var col, name, _ref;
+  _ref = fromDb.collections;
+  for (name in _ref) {
+    col = _ref[name];
+    if (!toDb[name]) {
+      toDb.addCollection(name);
+    }
+  }
+  return async.each(_.values(fromDb.collections), (function(_this) {
+    return function(fromCol, cb) {
+      var toCol;
+      toCol = toDb[fromCol.name];
+      return fromCol.find({}).fetch(function(items) {
+        return toCol.seed(items, function() {
+          return fromCol.pendingUpserts(function(upserts) {
+            return toCol.upsert(_.pluck(upserts, "doc"), _.pluck(upserts, "base"), function() {
+              return fromCol.pendingRemoves(function(removes) {
+                return async.eachSeries(removes, function(remove, cb2) {
+                  return toCol.remove(remove, function() {
+                    return cb2();
+                  }, cb2);
+                }, cb);
+              }, cb);
+            }, cb);
+          }, cb);
+        }, cb);
+      }, cb);
+    };
+  })(this), (function(_this) {
+    return function(err) {
+      if (err) {
+        return error(err);
+      }
+      return success();
+    };
+  })(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.compileDocumentSelector" id="apidoc.element.minimongo.utils.compileDocumentSelector">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>compileDocumentSelector
+        <span class="apidocSignatureSpan">(docSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileDocumentSelector = function (docSelector) {
+  var perKeySelectors = [];
+  _.each(docSelector, function (subSelector, key) {
+    if (key.substr(0, 1) === '$') {
+      // Outer operators are either logical operators (they recurse back into
+      // this function), or $where.
+      if (!_.has(LOGICAL_OPERATORS, key))
+        throw new Error("Unrecognized logical operator: " + key);
+      perKeySelectors.push(LOGICAL_OPERATORS[key](subSelector));
+    } else {
+      var lookUpByIndex = LocalCollection._makeLookupFunction(key);
+      var valueSelectorFunc = compileValueSelector(subSelector);
+      perKeySelectors.push(function (doc) {
+        var branchValues = lookUpByIndex(doc);
+        // We apply the selector to each "branched" value and return true if any
+        // match. This isn't 100% consistent with MongoDB; eg, see:
+        // https://jira.mongodb.org/browse/SERVER-8585
+        return _.any(branchValues, valueSelectorFunc);
+      });
+    }
+  });
+
+
+  return function (doc) {
+    return _.all(perKeySelectors, function (f) {
+      return f(doc);
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (success != null) {
+    return success();
+  }
+};
+
+Collection.prototype.uncache = function(selector, success, error) {
+  var compiledSelector, items;
+  compiledSelector = utils.<span class="apidocCodeKeywordSpan">compileDocumentSelector</span>(selector);
+  items = _.filter(_.values(this.items), (function(_this) {
+    return function(item) {
+      return (_this.upserts[item._id] != null) || !compiledSelector(item);
+    };
+  })(this));
+  this.items = _.object(_.pluck(items, "_id"), items);
+  if (success != null) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.createUid" id="apidoc.element.minimongo.utils.createUid">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>createUid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createUid = function () {
+  return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r, v;
+    r = Math.random() * 16 | 0;
+    v = c === 'x' ? r : r &amp; 0x3 | 0x8;
+    return v.toString(16);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.filterFields" id="apidoc.element.minimongo.utils.filterFields">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>filterFields
+        <span class="apidocSignatureSpan">(items, fields)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterFields = function (items, fields) {
+  if (fields == null) {
+    fields = {};
+  }
+  if (_.keys(fields).length === 0) {
+    return items;
+  }
+  return _.map(items, function(item) {
+    var field, from, newItem, obj, path, pathElem, to, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2,
+_ref3;
+    newItem = {};
+    if (_.first(_.values(fields)) === 1) {
+      _ref = _.keys(fields).concat(["_id"]);
+      for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+        field = _ref[_i];
+        path = field.split(".");
+        obj = item;
+        for (_j = 0, _len1 = path.length; _j &lt; _len1; _j++) {
+          pathElem = path[_j];
+          if (obj) {
+            obj = obj[pathElem];
+          }
+        }
+        if (obj == null) {
+          continue;
+        }
+        from = item;
+        to = newItem;
+        _ref1 = _.initial(path);
+        for (_k = 0, _len2 = _ref1.length; _k &lt; _len2; _k++) {
+          pathElem = _ref1[_k];
+          to[pathElem] = to[pathElem] || {};
+          to = to[pathElem];
+          from = from[pathElem];
+        }
+        to[_.last(path)] = from[_.last(path)];
+      }
+      return newItem;
+    } else {
+      item = _.cloneDeep(item);
+      _ref2 = _.keys(fields);
+      for (_l = 0, _len3 = _ref2.length; _l &lt; _len3; _l++) {
+        field = _ref2[_l];
+        path = field.split(".");
+        obj = item;
+        _ref3 = _.initial(path);
+        for (_m = 0, _len4 = _ref3.length; _m &lt; _len4; _m++) {
+          pathElem = _ref3[_m];
+          if (obj) {
+            obj = obj[pathElem];
+          }
+        }
+        if (obj == null) {
+          continue;
+        }
+        delete obj[_.last(path)];
+      }
+      return item;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.migrateLocalDb" id="apidoc.element.minimongo.utils.migrateLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>migrateLocalDb
+        <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">migrateLocalDb = function (fromDb, toDb, success, error) {
+  var HybridDb, col, hybridDb, name, _ref;
+  HybridDb = require('./HybridDb');
+  hybridDb = new HybridDb(fromDb, toDb);
+  _ref = fromDb.collections;
+  for (name in _ref) {
+    col = _ref[name];
+    if (toDb[name]) {
+      hybridDb.addCollection(name);
+    }
+  }
+  return hybridDb.upload(success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.processFind" id="apidoc.element.minimongo.utils.processFind">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>processFind
+        <span class="apidocSignatureSpan">(items, selector, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processFind = function (items, selector, options) {
+  var filtered;
+  filtered = _.filter(items, compileDocumentSelector(selector));
+  filtered = processNearOperator(selector, filtered);
+  filtered = processGeoIntersectsOperator(selector, filtered);
+  if (options &amp;&amp; options.sort) {
+    filtered.sort(compileSort(options.sort));
+  }
+  if (options &amp;&amp; options.skip) {
+    filtered = _.slice(filtered, options.skip);
+  }
+  if (options &amp;&amp; options.limit) {
+    filtered = _.take(filtered, options.limit);
+  }
+  if (options &amp;&amp; options.fields) {
+    filtered = exports.filterFields(filtered, options.fields);
+  }
+  filtered = JSON.parse(JSON.stringify(filtered));
+  return filtered;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.regularizeUpsert" id="apidoc.element.minimongo.utils.regularizeUpsert">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>regularizeUpsert
+        <span class="apidocSignatureSpan">(docs, bases, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regularizeUpsert = function (docs, bases, success, error) {
+  var item, items, _i, _len, _ref;
+  if (_.isFunction(bases)) {
+    _ref = [void 0, bases, success], bases = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  if (!_.isArray(docs)) {
+    docs = [docs];
+    bases = [bases];
+  } else {
+    bases = bases || [];
+  }
+  items = _.map(docs, function(doc, i) {
+    return {
+      doc: doc,
+      base: i &lt; bases.length ? bases[i] : void 0
+    };
+  });
+  for (_i = 0, _len = items.length; _i &lt; _len; _i++) {
+    item = items[_i];
+    if (!item.doc._id) {
+      item.doc._id = exports.createUid();
+    }
+    if (item.base &amp;&amp; !item.base._id) {
+      throw new Error("Base needs _id");
+    }
+    if (item.base &amp;&amp; item.base._id !== item.doc._id) {
+      throw new Error("Base needs same _id");
+    }
+  }
+  return [items, success, error];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+    };
+  })(this), 0);
+};
+
+Collection.prototype.upsert = function(docs, bases, success, error) {
+  var item, items, _i, _len, _ref;
+  _ref = utils.<span class="apidocCodeKeywordSpan">regularizeUpsert</span>(docs, bases, success, error), items = _ref[0], success
+ = _ref[1], error = _ref[2];
+  for (_i = 0, _len = items.length; _i &lt; _len; _i++) {
+    item = items[_i];
+    if (item.base === void 0) {
+      if (this.upserts[item.doc._id]) {
+        item.base = this.upserts[item.doc._id].base;
+      } else {
+        item.base = this.items[item.doc._id] || null;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.autoselectLocalDb" id="apidoc.module.minimongo.utils.autoselectLocalDb">module minimongo.utils.autoselectLocalDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.autoselectLocalDb.autoselectLocalDb" id="apidoc.element.minimongo.utils.autoselectLocalDb.autoselectLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>autoselectLocalDb
+        <span class="apidocSignatureSpan">(options, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">autoselectLocalDb = function (options, success, error) {
+  var IndexedDb, LocalStorageDb, MemoryDb, WebSQLDb, browser;
+  IndexedDb = require('./IndexedDb');
+  WebSQLDb = require('./WebSQLDb');
+  LocalStorageDb = require('./LocalStorageDb');
+  MemoryDb = require('./MemoryDb');
+  browser = bowser.browser;
+  if (!isLocalStorageSupported()) {
+    return new MemoryDb(options, success);
+  }
+  if (window.cordova) {
+    console.log("Selecting WebSQLDb for Cordova");
+    return new WebSQLDb(options, success, error);
+  }
+  if (browser.android || browser.ios || browser.chrome || browser.safari || browser.opera || browser.blackberry) {
+    console.log("Selecting WebSQLDb for browser");
+    return new WebSQLDb(options, success, (function(_this) {
+      return function(err) {
+        console.log("Failed to create WebSQLDb: " + (err ? err.message : void 0));
+        return new IndexedDb(options, success, function(err) {
+          console.log("Failed to create IndexedDb: " + (err ? err.message : void 0));
+          return new MemoryDb(options, success);
+        });
+      };
+    })(this));
+  }
+  if (browser.firefox &amp;&amp; browser.version &gt;= 16) {
+    console.log("Selecting IndexedDb for browser");
+    return new IndexedDb(options, success, (function(_this) {
+      return function(err) {
+        console.log("Failed to create IndexedDb: " + (err ? err.message : void 0));
+        return new MemoryDb(options, success);
+      };
+    })(this));
+  }
+  console.log("Selecting LocalStorageDb for fallback");
+  return new LocalStorageDb(options, success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
+
+Uses code from Meteor.js minimongo package, reworked to support more geospatial queries and made npm+browserify friendly. It was
+ forked in January 2014.
+
+It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb
+).
+
+Autoselection is possible with `utils.<span class="apidocCodeKeywordSpan">autoselectLocalDb</span>(options, success, error)`. success
+ is called with the selected database.
+
+## Usage
+
+Minimongo is designed to be used with browserify.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.cloneLocalDb" id="apidoc.module.minimongo.utils.cloneLocalDb">module minimongo.utils.cloneLocalDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.cloneLocalDb.cloneLocalDb" id="apidoc.element.minimongo.utils.cloneLocalDb.cloneLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>cloneLocalDb
+        <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cloneLocalDb = function (fromDb, toDb, success, error) {
+  var col, name, _ref;
+  _ref = fromDb.collections;
+  for (name in _ref) {
+    col = _ref[name];
+    if (!toDb[name]) {
+      toDb.addCollection(name);
+    }
+  }
+  return async.each(_.values(fromDb.collections), (function(_this) {
+    return function(fromCol, cb) {
+      var toCol;
+      toCol = toDb[fromCol.name];
+      return fromCol.find({}).fetch(function(items) {
+        return toCol.seed(items, function() {
+          return fromCol.pendingUpserts(function(upserts) {
+            return toCol.upsert(_.pluck(upserts, "doc"), _.pluck(upserts, "base"), function() {
+              return fromCol.pendingRemoves(function(removes) {
+                return async.eachSeries(removes, function(remove, cb2) {
+                  return toCol.remove(remove, function() {
+                    return cb2();
+                  }, cb2);
+                }, cb);
+              }, cb);
+            }, cb);
+          }, cb);
+        }, cb);
+      }, cb);
+    };
+  })(this), (function(_this) {
+    return function(err) {
+      if (err) {
+        return error(err);
+      }
+      return success();
+    };
+  })(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.compileDocumentSelector" id="apidoc.module.minimongo.utils.compileDocumentSelector">module minimongo.utils.compileDocumentSelector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.compileDocumentSelector.compileDocumentSelector" id="apidoc.element.minimongo.utils.compileDocumentSelector.compileDocumentSelector">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>compileDocumentSelector
+        <span class="apidocSignatureSpan">(docSelector)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compileDocumentSelector = function (docSelector) {
+  var perKeySelectors = [];
+  _.each(docSelector, function (subSelector, key) {
+    if (key.substr(0, 1) === '$') {
+      // Outer operators are either logical operators (they recurse back into
+      // this function), or $where.
+      if (!_.has(LOGICAL_OPERATORS, key))
+        throw new Error("Unrecognized logical operator: " + key);
+      perKeySelectors.push(LOGICAL_OPERATORS[key](subSelector));
+    } else {
+      var lookUpByIndex = LocalCollection._makeLookupFunction(key);
+      var valueSelectorFunc = compileValueSelector(subSelector);
+      perKeySelectors.push(function (doc) {
+        var branchValues = lookUpByIndex(doc);
+        // We apply the selector to each "branched" value and return true if any
+        // match. This isn't 100% consistent with MongoDB; eg, see:
+        // https://jira.mongodb.org/browse/SERVER-8585
+        return _.any(branchValues, valueSelectorFunc);
+      });
+    }
+  });
+
+
+  return function (doc) {
+    return _.all(perKeySelectors, function (f) {
+      return f(doc);
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (success != null) {
+    return success();
+  }
+};
+
+Collection.prototype.uncache = function(selector, success, error) {
+  var compiledSelector, items;
+  compiledSelector = utils.<span class="apidocCodeKeywordSpan">compileDocumentSelector</span>(selector);
+  items = _.filter(_.values(this.items), (function(_this) {
+    return function(item) {
+      return (_this.upserts[item._id] != null) || !compiledSelector(item);
+    };
+  })(this));
+  this.items = _.object(_.pluck(items, "_id"), items);
+  if (success != null) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.createUid" id="apidoc.module.minimongo.utils.createUid">module minimongo.utils.createUid</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.createUid.createUid" id="apidoc.element.minimongo.utils.createUid.createUid">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>createUid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createUid = function () {
+  return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r, v;
+    r = Math.random() * 16 | 0;
+    v = c === 'x' ? r : r &amp; 0x3 | 0x8;
+    return v.toString(16);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.filterFields" id="apidoc.module.minimongo.utils.filterFields">module minimongo.utils.filterFields</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.filterFields.filterFields" id="apidoc.element.minimongo.utils.filterFields.filterFields">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>filterFields
+        <span class="apidocSignatureSpan">(items, fields)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterFields = function (items, fields) {
+  if (fields == null) {
+    fields = {};
+  }
+  if (_.keys(fields).length === 0) {
+    return items;
+  }
+  return _.map(items, function(item) {
+    var field, from, newItem, obj, path, pathElem, to, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2,
+_ref3;
+    newItem = {};
+    if (_.first(_.values(fields)) === 1) {
+      _ref = _.keys(fields).concat(["_id"]);
+      for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+        field = _ref[_i];
+        path = field.split(".");
+        obj = item;
+        for (_j = 0, _len1 = path.length; _j &lt; _len1; _j++) {
+          pathElem = path[_j];
+          if (obj) {
+            obj = obj[pathElem];
+          }
+        }
+        if (obj == null) {
+          continue;
+        }
+        from = item;
+        to = newItem;
+        _ref1 = _.initial(path);
+        for (_k = 0, _len2 = _ref1.length; _k &lt; _len2; _k++) {
+          pathElem = _ref1[_k];
+          to[pathElem] = to[pathElem] || {};
+          to = to[pathElem];
+          from = from[pathElem];
+        }
+        to[_.last(path)] = from[_.last(path)];
+      }
+      return newItem;
+    } else {
+      item = _.cloneDeep(item);
+      _ref2 = _.keys(fields);
+      for (_l = 0, _len3 = _ref2.length; _l &lt; _len3; _l++) {
+        field = _ref2[_l];
+        path = field.split(".");
+        obj = item;
+        _ref3 = _.initial(path);
+        for (_m = 0, _len4 = _ref3.length; _m &lt; _len4; _m++) {
+          pathElem = _ref3[_m];
+          if (obj) {
+            obj = obj[pathElem];
+          }
+        }
+        if (obj == null) {
+          continue;
+        }
+        delete obj[_.last(path)];
+      }
+      return item;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.migrateLocalDb" id="apidoc.module.minimongo.utils.migrateLocalDb">module minimongo.utils.migrateLocalDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.migrateLocalDb.migrateLocalDb" id="apidoc.element.minimongo.utils.migrateLocalDb.migrateLocalDb">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>migrateLocalDb
+        <span class="apidocSignatureSpan">(fromDb, toDb, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">migrateLocalDb = function (fromDb, toDb, success, error) {
+  var HybridDb, col, hybridDb, name, _ref;
+  HybridDb = require('./HybridDb');
+  hybridDb = new HybridDb(fromDb, toDb);
+  _ref = fromDb.collections;
+  for (name in _ref) {
+    col = _ref[name];
+    if (toDb[name]) {
+      hybridDb.addCollection(name);
+    }
+  }
+  return hybridDb.upload(success, error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.processFind" id="apidoc.module.minimongo.utils.processFind">module minimongo.utils.processFind</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.processFind.processFind" id="apidoc.element.minimongo.utils.processFind.processFind">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>processFind
+        <span class="apidocSignatureSpan">(items, selector, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processFind = function (items, selector, options) {
+  var filtered;
+  filtered = _.filter(items, compileDocumentSelector(selector));
+  filtered = processNearOperator(selector, filtered);
+  filtered = processGeoIntersectsOperator(selector, filtered);
+  if (options &amp;&amp; options.sort) {
+    filtered.sort(compileSort(options.sort));
+  }
+  if (options &amp;&amp; options.skip) {
+    filtered = _.slice(filtered, options.skip);
+  }
+  if (options &amp;&amp; options.limit) {
+    filtered = _.take(filtered, options.limit);
+  }
+  if (options &amp;&amp; options.fields) {
+    filtered = exports.filterFields(filtered, options.fields);
+  }
+  filtered = JSON.parse(JSON.stringify(filtered));
+  return filtered;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.minimongo.utils.regularizeUpsert" id="apidoc.module.minimongo.utils.regularizeUpsert">module minimongo.utils.regularizeUpsert</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.minimongo.utils.regularizeUpsert.regularizeUpsert" id="apidoc.element.minimongo.utils.regularizeUpsert.regularizeUpsert">
+        function <span class="apidocSignatureSpan">minimongo.utils.</span>regularizeUpsert
+        <span class="apidocSignatureSpan">(docs, bases, success, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regularizeUpsert = function (docs, bases, success, error) {
+  var item, items, _i, _len, _ref;
+  if (_.isFunction(bases)) {
+    _ref = [void 0, bases, success], bases = _ref[0], success = _ref[1], error = _ref[2];
+  }
+  if (!_.isArray(docs)) {
+    docs = [docs];
+    bases = [bases];
+  } else {
+    bases = bases || [];
+  }
+  items = _.map(docs, function(doc, i) {
+    return {
+      doc: doc,
+      base: i &lt; bases.length ? bases[i] : void 0
+    };
+  });
+  for (_i = 0, _len = items.length; _i &lt; _len; _i++) {
+    item = items[_i];
+    if (!item.doc._id) {
+      item.doc._id = exports.createUid();
+    }
+    if (item.base &amp;&amp; !item.base._id) {
+      throw new Error("Base needs _id");
+    }
+    if (item.base &amp;&amp; item.base._id !== item.doc._id) {
+      throw new Error("Base needs same _id");
+    }
+  }
+  return [items, success, error];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+    };
+  })(this), 0);
+};
+
+Collection.prototype.upsert = function(docs, bases, success, error) {
+  var item, items, _i, _len, _ref;
+  _ref = utils.<span class="apidocCodeKeywordSpan">regularizeUpsert</span>(docs, bases, success, error), items = _ref[0], success
+ = _ref[1], error = _ref[2];
+  for (_i = 0, _len = items.length; _i &lt; _len; _i++) {
+    item = items[_i];
+    if (item.base === void 0) {
+      if (this.upserts[item.doc._id]) {
+        item.base = this.upserts[item.doc._id].base;
+      } else {
+        item.base = this.items[item.doc._id] || null;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
