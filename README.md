@@ -1,4 +1,7 @@
-# api documentation for  [minimongo (v4.5.0)](https://github.com/mWater/minimongo)  [![npm package](https://img.shields.io/npm/v/npmdoc-minimongo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-minimongo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-minimongo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-minimongo)
+# npmdoc-minimongo
+
+#### basic api documentation for  [minimongo (v4.5.0)](https://github.com/mWater/minimongo)  [![npm package](https://img.shields.io/npm/v/npmdoc-minimongo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-minimongo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-minimongo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-minimongo)
+
 #### Client-side mongo database with server sync over http
 
 [![NPM](https://nodei.co/npm/minimongo.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/minimongo)
@@ -85,7 +88,8 @@
         "prepublish": "gulp",
         "test": "testem ci"
     },
-    "version": "4.5.0"
+    "version": "4.5.0",
+    "bin": {}
 }
 ```
 
